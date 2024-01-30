@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Pogodka</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="relative mx-auto p-6 dark:bg-navDark">
+        <div class="dark:text-white flex items-center justify-between">
+            <div class="pt-2 font-extrabold uppercase font-nav text-xl">
+                <a href="main.html">Pogodka</a>
+            </div>
+            <div class="hidden md:flex font-bold space-x-6 font-nav text-lg">
+                <a href="search.html" class="hover:text-gray-500">Search</a>
+                <a href="account.html" class="hover:text-gray-500">Account</a>
+                <a href="signup.html" class="hover:text-gray-500">Sign up</a>
+            </div>
+            <!--Hamburger menu-->
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                <svg class="w-6 h-6 text-gray-500 hover:text-cyan-500 dark:hover:text-cyan-100"
+                    x-show="!showMenu"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            </div>
+            <div class="hidden mobile-menu flex-center">
+				<ul class="">
+					<li><a href="search.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Search</a></li>
+					<li><a href="account.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Account</a></li>
+					<li><a href="signup.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Signup</a></li>
+				</ul>
+			</div>
+            <script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+    </nav>
+    <!--Search-->
+    <section role="main" class="container flex-col">
+            <div class="container flex flex-row p-10 ">
+                    <input required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm" id='inputValue' type="text" placeholder="Input the city">
+                    <button class="w-60 p-3 px-6 pt-2 text-white text-center text-bold text-main text-xl hover:bg-gray-500 bg-firstDark baseline" id="search" type="submit">Search</button>
+                    <button class="w-60 p-3 px-3 pt-2 text-white text-center text-bold text-main text-xl hover:bg-gray-500 bg-firstDark baseline" id="get-geo" type="submit">Use your location</button>
+            </div>
+            <div class="container flex flex-col">
+                    <div class="container-city">
+                        <div class='mt-5 flex justify-center text-xl font-bold'>
+                        <p class='city'></p> 
+                        </div>
+                    </div>
+                    <div class="container-temp">
+                        <div class='mt-5 flex justify-center text-xl'>
+                            <p class='temp'></p>
+                        </div>
+                    </div>
+                    <div class="container-feels_temp">
+                        <div class='mt-5 flex justify-center text-xl'>
+                            <p class='feels_temp'></p>
+                        </div>
+                    </div>
+                    <div class="container-desc">
+                        <div class='mt-5 flex justify-center text-xl'>
+                            <p class='desc'></p>
+                        </div>
+                    </div>
+            </div>
+    </section>
+    <!--Predefined cities-->
+    <section class ="bg-firstLight dark:bg-firstDark dark:text-white">
+        <div class="container flex flex-col items-center pt-12 px-6 mx-auto space-y-0">
+            <div class="flex flex-col mb-16 space-y-12">
+                <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left text-main">Or choose from these!</h1>
+            </div>
+        </div>
+    </section>
+    <div class="flex flex-col md:flex-row justify-between space-x-6 font-main">
+        <div class="p-4">
+            <img src="img/moscow.jpg" class="w-1/3" alt="Image of Moscow">
+                <div class="text-center font-bold text-xl">
+                    <a href="#"><h5>Moscow</h5></a>
+                </div>
+        </div>
+        <div class="p-4">
+            <img src="img/berlin.jpg" class="w-1/3" alt="Image of Berlin">
+                <div class="text-center font-bold text-xl">
+                    <a href="#"><h5>Berlin</h5></a>
+                </div>
+        </div>
+        <div class="p-4">
+            <img src="img/rejkyavik.jpg" class="w-1/3" alt="Image of Rejkyavik">
+                <div class="text-center font-bold text-xl">
+                    <a href="#"><h5>Rejkyavik</h5></a>
+                </div>
+        </div> 
+    </div>
+    <!--Footer-->
+    <footer class="p-12 text-center dark:bg-firstDark">
+        <div class="container">
+            <p class="text-main text-xl dark:text-white">Copyright &copy; 2023 Pogodka Inc.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+    

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Pogodka</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="relative mx-auto p-6 dark:bg-navDark">
+        <div class="dark:text-white flex items-center justify-between">
+            <div class="pt-2 font-extrabold uppercase font-nav text-xl">
+                <a href="main.html">Pogodka</a>
+            </div>
+            <div class="hidden md:flex font-bold space-x-6 font-nav text-lg">
+                <a href="search.html" class="hover:text-gray-500">Search</a>
+                <a href="account.html" class="hover:text-gray-500">Account</a>
+                <a href="signup.html" class="hover:text-gray-500">Sign up</a>
+            </div>
+            <!--Hamburger menu-->
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                <svg class="w-6 h-6 text-gray-500 hover:text-cyan-500 dark:hover:text-cyan-100"
+                    x-show="!showMenu"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            </div>
+            <div class="hidden mobile-menu flex-center">
+				<ul class="">
+					<li><a href="search.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Search</a></li>
+					<li><a href="account.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Account</a></li>
+					<li><a href="signup.html" class="block text-nav px-2 py-4 hover:bg-cyan-500 transition duration-300">Signup</a></li>
+				</ul>
+			</div>
+            <script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+    </nav>
+    <section class="w-full">
+        __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+    </section>
+    <!--Form-->
+    <section class ="flex flex-col items-center">
+        <div class="mb-16">
+            <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl text-main">Don't have an account? Sign up!</h1>
+        </div>
+    </section>
+    <section class="flex flex-col items-center mt-12">
+        <form>
+            <div class="flex flex-col space-y-6">
+                <div class="font-main text-xl">
+                  <label for="firstname">First Name</label>
+                  <input
+                    class="border border-gray-400 px-4 py-2 rounded w-full focus:outline-none focus:border-teal-400"
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                  />
+                </div>
+                <div class="font-main text-xl">
+                  <label for="lastname">Last Name</label>
+                  <input
+                    class="border border-gray-400 px-4 py-2 rounded w-full focus:outline-none focus:border-teal-400"
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                  />
+                </div>
+                <div class="font-main text-xl">
+                    <label for="email">Email address</label>
+                    <input
+                      class="border border-gray-400 px-4 py-2 rounded w-full focus:outline-none focus:border-teal-400"
+                      type="email"
+                      name="email"
+                      id="email"
+                    />
+                </div>
+                <div class="font-main text-xl">
+                    <label for="password">Enter password</label>
+                    <input
+                      class="border border-gray-400 px-4 py-2 rounded w-full focus:outline-none focus:border-teal-400"
+                      type="password"
+                      name="password"
+                      id="password"
+                    />
+                </div>
+                <div class="font-main text-xl">
+                    <label for="password">Repeat password</label>
+                    <input
+                      class="border border-gray-400 px-4 py-2 rounded w-full focus:outline-none focus:border-teal-400"
+                      type="password"
+                      name="password"
+                      id="passwordrepeated"
+                    />
+                </div>
+                <div class="flex items-center">
+                    <input id="agree" name="agree" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500">
+                    <label for="agree" class="ml-2 block text-xl">I agree to terms and conditions</label>
+                </div>
+                <div class="flex items-center">
+                    <button class="flex items-center justify-center md:justify-start"><a href="#" class="w-60 p-3 px-6 pt-2 text-white text-center text-bold text-main text-xl hover:bg-gray-500 bg-firstDark rounded-full baseline">Register</a></button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!--Footer-->
+    <footer class="p-12 text-center dark:bg-firstDark">
+        <div class="container">
+            <p class="text-main text-xl dark:text-white">Copyright &copy; 2023 Pogodka Inc.</p>
+        </div>
+    </footer>
+    </body>
+   
